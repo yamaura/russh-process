@@ -1,0 +1,28 @@
+[package]
+name = "russh-process"
+version = "0.1.0"
+authors = ["Yuki Yamaura <ymruki@gmail.com>"]
+edition = "2021"
+license = "MIT"
+description = "A library for running a command on a remote server via SSH."
+homepage = "https://github.com/yamaura/russh_process"
+repository = "https://github.com/yamaura/russh_process"
+
+[metadata.release]
+push = false
+tag-name = "{{prefix}}{{version}}"
+pre-release-commit-message = "Bump version to {{version}}"
+tag-message = "{{tag_name}}"
+
+[metadata.docs.rs]
+all-features = true
+
+[dependencies]
+russh = "0.46.0"
+thiserror = "2"
+tokio = { version = "1.41.1", features = ["io-util"] }
+
+[dev-dependencies]
+async-trait = "0.1.83"
+tokio = { version = "1.41.1", features = ["macros", "rt"] }
+russh-keys = "0.46.0"
